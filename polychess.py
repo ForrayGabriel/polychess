@@ -1,6 +1,8 @@
 #python-chess import
 #https://github.com/niklasf/python-chess
 import chess
+import chess.svg
+import random
 
 #set the board to its initial position
 #corresponding to: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
@@ -32,7 +34,7 @@ for move in moves:
     
     #display the board
     print(board)
-    
+
     #number of black moves
     print("Black moves:" + str(board.legal_moves.count()))
     
