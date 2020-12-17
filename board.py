@@ -1,10 +1,13 @@
 import chess
 import random
 
+from Chercheur import Chercheur
+
 class Jeu:
 	"""docstring for Jeu"""
 	def __init__(self):
 		self.board = chess.Board()
+		self.ch = Chercheur()
 
 	def getBoard(self):
 		return self.board
@@ -13,8 +16,8 @@ class Jeu:
 		self.board.push(chess.Move.from_uci(move_uci))
 
 	def mouv_sortant(self):
-		move_out = self.random_move()
-		#move_out = taFonction(self.board)
+		#move_out = self.random_move()
+		move_out = self.ch.minmax(self.board)
 		self.board.push(move_out)
 		return move_out.uci()
 
