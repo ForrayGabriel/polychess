@@ -11,6 +11,7 @@ import logging
 import chess
 import random
 
+from board import Jeu
 
 def random_move():
     moves = []
@@ -49,7 +50,7 @@ while True:
     for i in range(len(liste)):
         if liste[i].startswith('move'):
             logging.debug("On try le move " + liste[len(liste)-1])
-            board.push(chess.Move.from_uci(liste[len(liste)-1]))
+            jeu.mouv_entrant(liste[len(liste)-1])
     
     if ligne == 'uci':    
         output('id name Ceci n est pas un exercice Moteur 0.1')
@@ -58,10 +59,16 @@ while True:
          
     elif ligne == 'isready':
         output('readyok')
+
+    
+    elif ligne == 'ucinewgame':
+        logging.debug("Nouvelle partie")
+        jeu = Jeu()
+        logging.debug("On a fait un nouveau jeu")
+    
     
     if ligne.startswith('go'):
         logging.debug("C'est a nous")
-        move = random_move().uci()
+        move = jeu.mouv_sortant()
         logging.debug("On joue " + 'bestmove' + move + 'ponder b4a5')
         output('bestmove ' + move + ' ponder b4a5')
-        board.push(chess.Move.from_uci(move))
