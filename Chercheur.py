@@ -6,6 +6,7 @@ Created on Thu Dec 17 08:04:47 2020
 """
 import chess
 import chess.polyglot
+
 import logging
 import random
 
@@ -33,4 +34,5 @@ class Chercheur:
     		moves.append(i)
     	index = random.randint(0,len(moves)-1)
     	return moves[index]
+
 

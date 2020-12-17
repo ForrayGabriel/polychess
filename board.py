@@ -28,6 +28,3 @@ class Jeu:
    			moves.append(i)
    		index = random.randint(0,len(moves)-1)
    		return moves[index]
-
-x = Jeu()
-print(x.mouv_sortant())
