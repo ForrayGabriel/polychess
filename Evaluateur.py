@@ -2,6 +2,7 @@
 
 import chess
 import numpy as np
+import logging
 
 class Evaluateur:
     """
@@ -74,8 +75,12 @@ class Evaluateur:
 
 
     def __init__(self):
+        logging.basicConfig(filename='test.log', level=logging.DEBUG)
+        logging.debug("Salut moi c'est l'evaluateur")
         self.count = 0
         self.memory = {}
+        
+        
 
     def __call__(self, board):
         """
@@ -196,3 +201,5 @@ class Evaluateur:
      """
      return hash((board.board_fen(), board.turn,
          board.castling_rights, board.ep_square))    
+
+eva = Evaluateur()

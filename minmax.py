@@ -12,17 +12,21 @@ repositories : BallooChessEngine
 
 import time
 import chess
+import logging
 
+from Evaluateur import Evaluateur
 
 class MinMax:
 
-    DEFAULT_MAX_DEPTH = 5
+    DEFAULT_MAX_DEPTH = 3
 
     def __init__(self, max_depth=DEFAULT_MAX_DEPTH, evaluateur=None):
+        logging.basicConfig(filename='test.log', level=logging.DEBUG)
         self.max_depth = max_depth
         if evaluateur is None:
             raise Exception("MinMax need a evaluateur.")
         self.evaluateur = evaluateur
+        logging.debug("On a init minmax2")
 
     def minmax(self, board, depth, alpha, beta):
         """
@@ -69,22 +73,38 @@ class MinMax:
         return best_val
 
     def next_move(self, board):
+        print("ok2")
+        logging.debug("Point 1")
         b = board
+        logging.debug("Point 2")
+        print("ok3")
         depth = 0
         best_move = None
 
+        logging.debug("Point 3")
+        print("ok4")
         start = time.time()
+        logging.debug("Point 4")
+        print("ok5")
 
         if b.turn == chess.WHITE:
+            print("ok6")
             best_val = self.evaluateur.MINVALUE
+            print("ok7")
         else:
+            print("ok8")
             best_val = self.evaluateur.MAXVALUE
+            print("ok9")
 
         for m in b.legal_moves:
+            print("ok10")
             b.push(m)
+            print("ok11")
             tval = self.minmax(b, depth, self.evaluateur.MINVALUE,
                     self.evaluateur.MAXVALUE)
+            print("ok12")
             b.pop()
+            print("ok13")
 
             if b.turn == chess.WHITE:
                 if tval >= best_val:
@@ -100,3 +120,14 @@ class MinMax:
                 (best_val, str(best_move), self.evaluateur.count, eta))
 
         return best_move
+
+
+
+
+"""
+b = chess.Board()
+evaluateur = Evaluateur()
+MM = MinMax(max_depth=5, evaluateur=evaluateur)
+
+MM.next_move(b)
+"""
