@@ -13,13 +13,16 @@ import random
 from minmax import MinMax
 from Evaluateur import Evaluateur
 
+DEPTH = 1
+
+
 class Chercheur:
     def __init__(self):
         logging.basicConfig(filename='test.log', level=logging.DEBUG)
         logging.debug("On essaye d'init un evaluateur")
         self.evaluateur = Evaluateur()
         logging.debug("On essaye d'init un MinmAx")
-        self.MM = MinMax(max_depth=3, evaluateur=self.evaluateur)
+        self.MM = MinMax(max_depth=DEPTH, evaluateur=self.evaluateur)
 
     def cherche(self,b):
         try:  
