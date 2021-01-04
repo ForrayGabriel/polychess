@@ -26,7 +26,7 @@ class MinMax:
         if evaluateur is None:
             raise Exception("MinMax need a evaluateur.")
         self.evaluateur = evaluateur
-        logging.debug("On a init minmax2")
+        logging.debug("On a init MinMax")
 
     def minmax(self, board, depth, alpha, beta):
         """
@@ -73,38 +73,22 @@ class MinMax:
         return best_val
 
     def next_move(self, board):
-        print("ok2")
-        logging.debug("Point 1")
         b = board
-        logging.debug("Point 2")
-        print("ok3")
         depth = 0
         best_move = None
 
-        logging.debug("Point 3")
-        print("ok4")
         start = time.time()
-        logging.debug("Point 4")
-        print("ok5")
 
         if b.turn == chess.WHITE:
-            print("ok6")
             best_val = self.evaluateur.MINVALUE
-            print("ok7")
         else:
-            print("ok8")
             best_val = self.evaluateur.MAXVALUE
-            print("ok9")
 
         for m in b.legal_moves:
-            print("ok10")
             b.push(m)
-            print("ok11")
             tval = self.minmax(b, depth, self.evaluateur.MINVALUE,
                     self.evaluateur.MAXVALUE)
-            print("ok12")
             b.pop()
-            print("ok13")
 
             if b.turn == chess.WHITE:
                 if tval >= best_val:

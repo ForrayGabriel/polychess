@@ -60,7 +60,6 @@ while True:
     elif ligne == 'isready':
         output('readyok')
 
-    
     elif ligne == 'ucinewgame':
         logging.debug("Nouvelle partie")
         jeu = Jeu()
@@ -68,7 +67,7 @@ while True:
     
     
     if ligne.startswith('go'):
-        logging.debug("C'est a nous")
+        logging.debug("C'est a l'IA")
         move = jeu.mouv_sortant()
         logging.debug("On joue " + 'bestmove' + move + 'ponder b4a5')
         output('bestmove ' + move + ' ponder b4a5')

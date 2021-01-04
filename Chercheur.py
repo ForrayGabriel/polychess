@@ -19,9 +19,7 @@ DEPTH = 1
 class Chercheur:
     def __init__(self):
         logging.basicConfig(filename='test.log', level=logging.DEBUG)
-        logging.debug("On essaye d'init un evaluateur")
         self.evaluateur = Evaluateur()
-        logging.debug("On essaye d'init un MinmAx")
         self.MM = MinMax(max_depth=DEPTH, evaluateur=self.evaluateur)
 
     def cherche(self,b):
@@ -33,10 +31,10 @@ class Chercheur:
                 print(best_entry.move, best_entry.weight)
             return best_entry.move
         except:
-            logging.debug("Pas dans l'opening book")
             next_move = self.MM.next_move(b)
-            logging.debug("On a calculer le move")
             print(next_move)
+            logging.debug("Le move de l'IA est ")
+            logging.debug(next_move)
             return next_move
     """
     def random_move(self, b):

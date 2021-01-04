@@ -76,7 +76,7 @@ class Evaluateur:
 
     def __init__(self):
         logging.basicConfig(filename='test.log', level=logging.DEBUG)
-        logging.debug("Salut moi c'est l'evaluateur")
+        logging.debug("On a init l'evaluateur")
         self.count = 0
         self.memory = {}
         
