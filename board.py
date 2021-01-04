@@ -17,7 +17,7 @@ class Jeu:
 
 	def mouv_sortant(self):
 		#move_out = self.random_move()
-		move_out = self.ch.minmax(self.board)
+		move_out = self.ch.cherche(self.board)
 		self.board.push(move_out)
 		return move_out.uci()
 

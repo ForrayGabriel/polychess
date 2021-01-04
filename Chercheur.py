@@ -14,7 +14,7 @@ class Chercheur:
     def __init__(self):
         logging.basicConfig(filename='cherche.log', level=logging.DEBUG)
 
-    def minmax(self,b):
+    def cherche(self,b):
     	logging.debug("Minmax :")
     	try:  
 	    	with chess.polyglot.open_reader("bookfish.bin") as reader:
