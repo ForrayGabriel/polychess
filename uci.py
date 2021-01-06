@@ -73,7 +73,9 @@ while True:
         jeu = Jeu()
         logging.debug("On a fait un nouveau jeu")
     
-    
+    elif ligne == 'quit':
+        jeu.save()
+        
     if ligne.startswith('go'):
         logging.debug("C'est a l'IA")
         move = jeu.mouv_sortant()
