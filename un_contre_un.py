@@ -6,6 +6,7 @@ Created on Thu Dec 10 11:00:53 2020
 """
 
 import chess
+import chess.svg
 import random
 
 
@@ -34,7 +35,7 @@ choix = input("Choix du mode de jeu :\n1 - Joueur contre Joueur\n2 - Joueur cont
 #corresponding to: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 board = chess.Board()
 
-logging.debug(board)
+
 
 def un_contre_un():
     white = True
@@ -44,6 +45,7 @@ def un_contre_un():
             print("\nWhite to play :")
             white = False
             board.push(recup_move())
+            display(chess.svg.board(board, size=350))
         else :
             print("\nBlack to play :")
             white = True

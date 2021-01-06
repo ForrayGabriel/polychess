@@ -9,6 +9,7 @@ import sys
 import logging
 
 import chess
+import chess.pgn
 import random
 
 from board import Jeu
@@ -36,6 +37,7 @@ class Unbuffered(object):
 
 logging.basicConfig(filename='test.log', level=logging.DEBUG)
 out = Unbuffered(sys.stdout)
+partie_en_cours = False
 
 def output(ligne):
     print(ligne, file=out)
@@ -53,7 +55,7 @@ while True:
             jeu.mouv_entrant(liste[len(liste)-1])
     
     if ligne == 'uci':    
-        output('id name Ceci n est pas un exercice Moteur 0.1')
+        output('id name Moteur 0.1')
         output('id author IDU3')
         output('uciok')
          
@@ -62,6 +64,12 @@ while True:
 
     elif ligne == 'ucinewgame':
         logging.debug("Nouvelle partie")
+        if partie_en_cours:
+            logging.debug("On a déja une partie")
+            jeu.save()
+        else :
+            logging.debug("On n'a pas encore de partie")
+            partie_en_cours = True
         jeu = Jeu()
         logging.debug("On a fait un nouveau jeu")
     
@@ -69,5 +77,5 @@ while True:
     if ligne.startswith('go'):
         logging.debug("C'est a l'IA")
         move = jeu.mouv_sortant()
-        logging.debug("On joue " + 'bestmove' + move + 'ponder b4a5')
+        logging.debug("On joue " + 'bestmove ' + move + ' ponder b4a5')
         output('bestmove ' + move + ' ponder b4a5')
