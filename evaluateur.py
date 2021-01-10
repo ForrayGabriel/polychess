@@ -1,4 +1,7 @@
-#Fonction reprise du Git matthieuberger/BalooChessEngine 
+'''
+Classe reprise de matthieuberger sur github.
+repositories : BallooChessEngine
+'''
 
 import chess
 import numpy as np

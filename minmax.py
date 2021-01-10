@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jan  4 09:54:52 2021
-
-@author: cleme
-"""
-
 '''
 Classe reprise de matthieuberger sur github.
 repositories : BallooChessEngine
@@ -14,12 +7,14 @@ import time
 import chess
 import logging
 
-from Evaluateur import Evaluateur
+from evaluateur import Evaluateur
 
 class MinMax:
 
+    #profondeur de recherche par défaut
     DEFAULT_MAX_DEPTH = 3
 
+    #On lance minmax avec l'évaluateur de notre choix
     def __init__(self, max_depth=DEFAULT_MAX_DEPTH, evaluateur=None):
         logging.basicConfig(filename='test.log', level=logging.DEBUG)
         self.max_depth = max_depth
@@ -28,6 +23,7 @@ class MinMax:
         self.evaluateur = evaluateur
         logging.debug("On a init MinMax")
 
+    #Fonciton qui applique les algorythme min max et alpha beta pour trouver le meilleur coup
     def minmax(self, board, depth, alpha, beta):
         """
         AI function that choice the best move
@@ -104,14 +100,3 @@ class MinMax:
                 (best_val, str(best_move), self.evaluateur.count, eta))
 
         return best_move
-
-
-
-
-"""
-b = chess.Board()
-evaluateur = Evaluateur()
-MM = MinMax(max_depth=5, evaluateur=evaluateur)
-
-MM.next_move(b)
-"""

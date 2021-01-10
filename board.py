@@ -1,3 +1,5 @@
+#Fichier contenant la classe jeu qui gère une partie
+
 import chess
 import chess.pgn
 import random
@@ -6,10 +8,12 @@ import os
 
 import logging
 
-from Chercheur import Chercheur
+from chercheur import Chercheur
 
+#Classe qui gère la planche de jeu
 class Jeu:
-	"""docstring for Jeu"""
+	
+	#En initialisant un Jeu on crée une board, chercheur et une game pour la sauvegarde en PGN
 	def __init__(self):
 		self.board = chess.Board()
 		self.ch = Chercheur()
@@ -19,10 +23,11 @@ class Jeu:
 		self.game.headers["Black"] = "Moteur du Proj531"
 		self.node = False
 
-
+	#Fonction pour récupérer la board
 	def getBoard(self):
 		return self.board
 	
+	#Fonction qui prend un move en uci en paramètre et qui le joue sur la board
 	def mouv_entrant(self, move_uci):
 		self.board.push(chess.Move.from_uci(move_uci))
 		if self.node == False :
@@ -30,6 +35,7 @@ class Jeu:
 		else :
 			self.node = self.node.add_variation(chess.Move.from_uci(move_uci))
 
+	#Fonction qui cherche le mouvement le plus adapter, le joue et le retourne
 	def mouv_sortant(self):
 		#move_out = self.random_move()
 		move_out = self.ch.cherche(self.board)
@@ -37,7 +43,8 @@ class Jeu:
 		self.node = self.node.add_variation(chess.Move.from_uci(move_out.uci()))
 		return move_out.uci()
 
-
+	#Fonction qui retourne un mouvement aléatoire
+	#N'est plus utilisé
 	def random_move(self):
    		moves = []
    		for i in self.board.legal_moves:
@@ -45,6 +52,7 @@ class Jeu:
    		index = random.randint(0,len(moves)-1)
    		return moves[index]
 
+   	#Fonction qui enregistre la gmae au format PGN dans le dossier Saved Game
 	def save(self):
 		try:
 			os.mkdir("Saved Games")
