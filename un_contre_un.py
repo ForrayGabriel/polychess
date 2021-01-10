@@ -10,7 +10,7 @@ import chess.svg
 import random
 
 
-
+#Fonction qui demander un mouvement dans la console et le retourn sous la forme d'un chess move
 def recup_move():
     case_dep = input("Case départ :")
     case_arr = input("Case arrivée :")
@@ -22,6 +22,7 @@ def recup_move():
         move = chess.Move.from_uci(case_dep+case_arr)
     return move
 
+#Fonction qui retourne un coup au hasard dans la liste des coups possibles
 def random_move():
     moves = []
     for i in board.legal_moves:
@@ -29,14 +30,14 @@ def random_move():
     index = random.randint(0,len(moves)-1)
     return moves[index]
 
+
 choix = input("Choix du mode de jeu :\n1 - Joueur contre Joueur\n2 - Joueur contre ordinateur aléatoire\n3 - Ordinateur contre lui même en aléatoire\n")
 
 #set the board to its initial position
 #corresponding to: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 board = chess.Board()
 
-
-
+#Fonction pour jouer en joueur contre joueur
 def un_contre_un():
     white = True
     print(board)
@@ -45,14 +46,13 @@ def un_contre_un():
             print("\nWhite to play :")
             white = False
             board.push(recup_move())
-            display(chess.svg.board(board, size=350))
         else :
             print("\nBlack to play :")
             white = True
             board.push(recup_move())
         print(board)
 
-
+#Fonction pour jouer contre un bot jouant aléatoirement
 def bot_random():
     white = True
     print(board)
@@ -67,7 +67,7 @@ def bot_random():
             board.push(random_move())
         print(board)
 
-
+#Fonction pour faire s'affronter deux bots jouant aléatoirement
 def autoplay_random():
     white = True
     print(board)
