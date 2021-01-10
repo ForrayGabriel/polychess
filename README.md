@@ -6,7 +6,7 @@ Pour lancer le moteur avec une interface, ce sera le programme "uci.py" qui va l
 * @echo off
 * python uci.py %*
 * pause
-
+--------------------
 ATTENTION
 
 Il faut au préalable avoir installé la bibliothèque chess.py
