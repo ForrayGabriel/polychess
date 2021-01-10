@@ -1,3 +1,13 @@
+# Comment utiliser notre moteur
+Si vous voulez lancer le moteur sans interface, il suffit de lance "un_contre_un".py.
+
+
+Pour lancer le moteur avec une interface, ce sera le programme "uci.py" qui va lancer le moteur, il suffit de mettre dans "IDU3.bat" les lignes suivantes:
+* @echo off
+* python uci.py %*
+* pause
+
+
 # PolyChess
 
 PolyChess (named polychess as Git repository) is a Chess engine written in Python and used as practicals for a course on project management at the engineering school Polytech Annecy-Chambéry. 
