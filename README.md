@@ -9,7 +9,7 @@ Pour lancer le moteur avec une interface, ce sera le programme "uci.py" qui va l
 --------------------
 ⚠ ATTENTION ⚠
 
-Il faut au préalable avoir installé la bibliothèque chess.py
+Il faut au préalable avoir installé la bibliothèque chess.py.
 
 # PolyChess
 
