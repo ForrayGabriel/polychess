@@ -1,4 +1,4 @@
-# :chess: Comment utiliser notre moteur :chess:
+# ♟️ Comment utiliser notre moteur ♟️
 Si vous voulez lancer le moteur sans interface, il suffit de lancer "un_contre_un.py".
 
 
