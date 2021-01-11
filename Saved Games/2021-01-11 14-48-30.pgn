@@ -1,0 +1,19 @@
+[Event "Partie contre un joueur"]
+[Site "?"]
+[Date "2021-01-11 14:48:30.802675"]
+[Round "?"]
+[White "?"]
+[Black "Moteur du Proj531"]
+[Result "*"]
+
+1. e4 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qd3 g6 5. Nf3 Qa5+ 6. c3 Qa4 7. b3 Qa5 8. b4
+Qa4 9. b5 Na5 10. Qd4 Qxd4 11. Nxd4 e5 12. Nb3 Nxb3 13. axb3 h5 14. Ba3 Bxa3
+15. Nxa3 h4 16. Nc4 a5 17. b4 a4 18. Nxe5 b6 19. Nc4 Ra7 20. Nxb6 Bb7 21. Rg1
+Bxe4 22. O-O-O d6 23. g3 hxg3 24. Rxg3 Rxh2 25. Rxd6 Rxf2 26. Bc4 Rc2+ 27. Kd1
+a3 28. Re3 Re7 29. Nc8 Re5 30. Re2 Rxe2 31. Kxe2 Bg2+ 32. Kf2 Rg5 33. b6 Bb7
+34. Bb5+ Rxb5 35. Na7 Rf5+ 36. Ke3 Rf3+ 37. Kd4 Rf4+ 38. Kd3 Rf3+ 39. Kc2 Be4+
+40. Kb3 f6 41. b7 Bxb7 42. Re6+ Kd7 43. Rb6 Bd5+ 44. Kxa3 Rxc3+ 45. Kb2 Rb3+
+46. Kc2 Bf7 47. Rb7+ Kd6 48. Rxf7 Rxb4 49. Rf8 Rc4+ 50. Kb1 Rb4+ 51. Kc2 Rc4+
+52. Kd3 Rc7 53. Nb5+ Kc5 54. Nxc7 Kb6 55. Ne8 Nh6 56. Rxf6+ Kc5 57. Rxg6 Nf5
+58. Rg5 Kb4 59. Rxf5 Ka3 60. Kc3 Ka2 61. Ra5+ Kb1 62. Nd6 Kc1 *
+

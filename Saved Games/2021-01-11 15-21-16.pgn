@@ -1,0 +1,12 @@
+[Event "Partie contre un joueur"]
+[Site "?"]
+[Date "2021-01-11 15:21:16.608128"]
+[Round "?"]
+[White "?"]
+[Black "Moteur du Proj531"]
+[Result "*"]
+
+1. d4 Nf6 2. e3 c5 3. dxc5 Qa5+ 4. Ke2 Qxc5 5. Qd4 Qxc2+ 6. Bd2 Nh5 7. h3 a5 8.
+g4 Ng3+ 9. fxg3 b5 10. Qd5 Ra6 11. Qxb5 Rd6 12. Qxa5 Qxb2 13. Qa8 Qxa1 14. Qxb8
+Rc6 15. Qb5 Rc2 16. Qb3 Ba6+ 17. Kf3 Qf6+ 18. Kg2 Bxf1+ 19. Kh2 Qf2# *
+

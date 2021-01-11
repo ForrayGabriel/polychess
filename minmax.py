@@ -52,14 +52,14 @@ class MinMax:
             tval = self.minmax(b, depth+1, alpha, beta)
             b.pop()
 
-            # if it's white turn then your goal is to maximize
+            # if it's black turn then your goal is to maximize
             if b.turn == chess.BLACK:
                 best_val = max(best_val, tval)
                 alpha = max(alpha, best_val)
                 if (alpha <= beta):
                     return best_val
 
-            # if it's black turn then you want to minimize
+            # if it's white turn then you want to minimize
             else:
                 best_val = min(best_val, tval)
                 beta = min(best_val, beta)
