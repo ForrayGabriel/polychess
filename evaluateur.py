@@ -1,6 +1,6 @@
 '''
 Classe reprise de matthieuberger sur github.
-repositories : BallooChessEngine
+repositories :  matthieuberger/BalooChessEngine 
 '''
 
 import chess
@@ -107,7 +107,7 @@ class Evaluateur:
         return: int
         """
         pval = self.PIECES_VALUES[piece_type]
-        if color == chess.BLACK:
+        if color == chess.WHITE:
             pval *= -1
         return pval
 
@@ -130,7 +130,7 @@ class Evaluateur:
         return: float
         """
         scalar = 1
-        if board.turn == chess.BLACK:
+        if board.turn == chess.WHITE:
             scalar *= -1
         return scalar * board.legal_moves.count()
 
@@ -146,14 +146,14 @@ class Evaluateur:
         indexes = list(board.pieces(piece_type, color))
         for idx in indexes:
             mask = np.array(self.PIECES_SQUARE_VALUES[piece_type], dtype=int)
-            if color == chess.BLACK:
+            if color == chess.WHITE:
                 mask = mask[::-1]
 
             x = idx//8
             y = idx % 8
             val += mask[x][y]
 
-        if color == chess.BLACK:
+        if color == chess.WHITE:
             return -val
 
         return val
@@ -179,9 +179,9 @@ class Evaluateur:
         if board.is_game_over():
             #White win
             if board.result() == "1-0":
-                return self.MAXVALUE
-            elif board.result() == "0-1":
                 return self.MINVALUE
+            elif board.result() == "0-1":
+                return self.MAXVALUE
             else:
                 return 0
 

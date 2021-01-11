@@ -14,7 +14,7 @@ from minmax import MinMax
 from evaluateur import Evaluateur
 
 #Variable pour choisir la profondeur de recherche
-DEPTH = 3
+DEPTH = 2
 
 #Classe qui créer un chercheur qui va chercher le meilleur mouv
 class Chercheur:

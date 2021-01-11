@@ -1,6 +1,6 @@
 '''
 Classe reprise de matthieuberger sur github.
-repositories : BallooChessEngine
+repositories : matthieuberger/BalooChessEngine 
 '''
 
 import time
@@ -39,7 +39,7 @@ class MinMax:
         if depth == self.max_depth or b.is_game_over():
             return self.evaluateur(b)
 
-        if b.turn == chess.WHITE:
+        if b.turn == chess.BLACK:
             best_val = self.evaluateur.MINVALUE
         else:
             best_val = self.evaluateur.MAXVALUE
@@ -53,7 +53,7 @@ class MinMax:
             b.pop()
 
             # if it's white turn then your goal is to maximize
-            if b.turn == chess.WHITE:
+            if b.turn == chess.BLACK:
                 best_val = max(best_val, tval)
                 alpha = max(alpha, best_val)
                 if (alpha <= beta):
@@ -75,7 +75,7 @@ class MinMax:
 
         start = time.time()
 
-        if b.turn == chess.WHITE:
+        if b.turn == chess.BLACK:
             best_val = self.evaluateur.MINVALUE
         else:
             best_val = self.evaluateur.MAXVALUE
@@ -86,7 +86,7 @@ class MinMax:
                     self.evaluateur.MAXVALUE)
             b.pop()
 
-            if b.turn == chess.WHITE:
+            if b.turn == chess.BLACK:
                 if tval >= best_val:
                     best_val = tval
                     best_move = m

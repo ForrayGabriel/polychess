@@ -52,7 +52,7 @@ class Jeu:
    		index = random.randint(0,len(moves)-1)
    		return moves[index]
 
-   	#Fonction qui enregistre la gmae au format PGN dans le dossier Saved Game
+   	#Fonction qui enregistre la game au format PGN dans le dossier Saved Game
 	def save(self):
 		try:
 			os.mkdir("Saved Games")
